@@ -38,6 +38,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
 
 
         initSaveButton();
+        initInputs();
     }
 
     private void initSaveButton() {
@@ -69,16 +70,16 @@ public class AddMahasiswaActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                String url = "https://stmikpontianak.net/011100862/tampilMahasiswa.php" +
-                        "?nim" + nim +
+                String url = "https://stmikpontianak.net/011100862/tambahMahasiswa.php" +
+                        "?nim=" + nim +
                         "&nama=" + nama +
                         "&jenisKelamin=" + jenisKelamin +
-                        "&tempatLahir" + tempatLahir +
-                        "&tanggalLahir" + tanggalLahir +
-                        "&alamat" + alamat +
-                        "&jp" + jp +
-                        "&statusPernikahan" + statusPernikahan +
-                        "&tahunMasuk" + tahunMasuk;
+                        "&tempatLahir=" + tempatLahir +
+                        "&tanggalLahir=" + tanggalLahir +
+                        "&alamat=" + alamat +
+                        "&jp=" + jp +
+                        "&statusPernikahan=" + statusPernikahan +
+                        "&tahunMasuk=" + tahunMasuk;
 
                 AsyncHttpClient ahc = new AsyncHttpClient();
 
@@ -116,5 +117,17 @@ public class AddMahasiswaActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void initInputs() {
+        _alamatEditText = findViewById(R.id.alamatEditText);
+        _jpSpinner = findViewById(R.id.jpSpinner);
+        _namaEditText = findViewById(R.id.namaEditText);
+        _nimEditText = findViewById(R.id.nimEditText);
+        _jenisKelaminSpinner = findViewById(R.id.jenisKelaminSpinner);
+        _statusNikahSpinner = findViewById(R.id.statusNikahSpinner);
+        _tahunMasukEditText = findViewById(R.id.tahunMasukEditText);
+        _tanggalLahirEditText = findViewById(R.id.tanggalLahirEditText);
+        _tempatLahirEditText = findViewById(R.id.tempatLahirEditText);
     }
 }
